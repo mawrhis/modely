@@ -1,0 +1,71 @@
+
+.visible {
+	left: 0 !important;
+}
+
+.header {
+	height: 2rem;
+	background-color: $bg-primary;
+    position: fixed;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.14) 2px 2px 0 4px;
+
+	&__toggle {
+    position: fixed;
+    right: 0;
+    top: 0;
+		width: 1.5rem;
+		height: 1.5rem;
+		background-color: black;
+		float: right;
+		margin: .25rem;
+	}
+
+	&__nav {
+		width: auto;
+		position: absolute;
+		left: -10rem; 
+    top: 2rem;
+    transition:0.4s;
+    background-color: $bg-primary;
+    box-shadow: rgba(0, 0, 0, 0.14) 3px 3px 0 3px;
+	}
+
+	&__logo {
+    margin: 0 auto;
+    margin-top: .5rem;
+    width: 7rem;
+    font-weight: 700;
+	}
+}
+
+.nav {
+
+	&__list {
+	padding: 1rem;
+	}
+
+	&__item {
+		font-size: 1.2rem;
+		line-height: 1.4rem;
+	}
+}
+
+.plane {
+
+	&:hover {
+		&:after {
+			display: inline;
+			color: red;
+		}
+	}
+
+	&:after {
+		content: "A";
+		color: white;
+		display: none;
+
+
+
+	}
+}

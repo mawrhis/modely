@@ -37,7 +37,8 @@ gulp.task('styles', function() {
         includeContent: false,
         sourceRoot: 'source'
     }))
-    .pipe(gulp.dest('dist/styles'));
+    .pipe(gulp.dest('dist/styles'))
+    .pipe(browserSync.stream());
 });
 
 
@@ -50,7 +51,8 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist/scripts'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/scripts'));
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe(browserSync.stream());
 });
 
 // Images
@@ -87,6 +89,7 @@ gulp.task('watch', function() {
 
     gulp.watch(['dist/**']).on("change", reload);
     gulp.watch(['src/**']).on("change", reload);
+    gulp.watch(['*.html']).on("change", reload);
 
 });
 
