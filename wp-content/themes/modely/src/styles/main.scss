@@ -1,0 +1,16 @@
+@import "reset";
+@import "variables";
+@import "header";
+
+
+
+.body { 
+	background-color: $bg-primary;
+}
+
+.main {	
+	&__inner {
+		width:100%;
+		background-color: white;
+	}
+}
