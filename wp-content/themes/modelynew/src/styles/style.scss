@@ -26,7 +26,6 @@ a {
 
 	&__inner {
 		padding: 1rem;
-
 		padding-top: 5rem;
 
 
@@ -34,6 +33,13 @@ a {
 		padding: 5rem;
 		
 	}
+
+	@include mq($from: tablet) {
+		padding: 10rem;
+		padding-top: 5rem;
+		margin: auto;
+	}
+
 
 	@include mq($from: desktop) {
 		width: 600px;
