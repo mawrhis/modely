@@ -26,18 +26,18 @@ gulp.task('styles', function() {
   return sass('src/styles/*.scss', { style: 'expanded' , sourcemap: true})
     .on('error', sass.logError)
     .pipe(autoprefixer('last 2 version'))
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest('./'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano())
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest('./'))
      // for inline sourcemaps 
     .pipe(sourcemaps.write())
         // for file sourcemaps 
-    .pipe(sourcemaps.write('/', {
+    .pipe(sourcemaps.write('./', {
         includeContent: false,
         sourceRoot: 'source'
     }))
-    .pipe(gulp.dest('dist/styles'))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 });
 

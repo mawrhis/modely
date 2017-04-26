@@ -18,4 +18,7 @@ wp-content/plugins/hello.php
 wp-content/themes/modely/node_modules
 wp-content/themes/modely/.sass-cache
 wp-content/themes/modely/dist
+wp-content/themes/modelynew/node_modules
+wp-content/themes/modelynew/.sass-cache
+wp-content/themes/modelynew/dist
 

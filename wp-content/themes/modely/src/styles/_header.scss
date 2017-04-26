@@ -8,7 +8,6 @@
 	background-color: $bg-primary;
     position: fixed;
     width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.14) 2px 2px 0 4px;
 
 	&__toggle {
     position: fixed;
@@ -68,4 +67,10 @@
 
 
 	}
+}
+
+.shadow {
+	
+    box-shadow: rgba(0, 0, 0, 0.14) 2px 2px 0 4px;
+    transition:0.4s;
 }
