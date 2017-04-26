@@ -86,6 +86,16 @@ table {
   width: 7rem;
   font-weight: 700;
 }
+@media (min-width: 61.25em) {
+  .header__toggle {
+    display: none;
+  }
+  .header__nav {
+    left: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
 
 .nav__list {
   padding: 1rem;
@@ -152,6 +162,24 @@ a:hover {
 }
 .main__inner {
   padding: 1rem;
+  padding-top: 5rem;
+}
+@media (min-width: 36.25em) {
+  .main__inner {
+    padding: 5rem;
+  }
+}
+@media (min-width: 61.25em) {
+  .main__inner {
+    width: 600px;
+    margin: auto;
+  }
+}
+@media (min-width: 81.25em) {
+  .main__inner {
+    width: 800px;
+    margin: auto;
+  }
 }
 
 

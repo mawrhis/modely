@@ -67,19 +67,16 @@ gulp.task('browser-sync', function() {
     browserSync.init({
         proxy   : "http://localhost/modely"
     });
-      // Watch .scss files
-  gulp.watch('src/styles/**/*.scss', ['styles']);
+        // Watch .scss files
+    gulp.watch('src/styles/**/*.scss', ['styles']);
 
-  // Watch .js files
-  gulp.watch('src/scripts/**/*.js', ['scripts']);
+    // Watch .js files
+    gulp.watch('src/scripts/**/*.js', ['scripts']);
 
-  // Watch image files
-  gulp.watch('src/images/**/*', ['images']);
+    // Watch image files
+    gulp.watch('src/images/**/*', ['images']);
 
-
-    gulp.watch(['dist/**']).on("change", browserSync.reload);
-    gulp.watch(['src/**']).on("change", browserSync.reload);
-    gulp.watch(['*.html']).on("change", browserSync.reload);
+    gulp.watch(['templates/*.twig']).on("change", browserSync.reload);
 });
 
 

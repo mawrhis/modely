@@ -35,6 +35,19 @@
     width: 7rem;
     font-weight: 700;
 	}
+
+	@include mq($from: desktop) {
+
+		&__toggle {
+			display: none;
+		}
+
+		&__nav {
+			left: 0;
+			box-shadow: none;
+			background-color: transparent;
+		}
+	}
 }
 
 .nav {
