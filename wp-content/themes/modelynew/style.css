@@ -72,13 +72,22 @@ table {
   margin: .25rem;
 }
 .header__nav {
-  width: auto;
+  width: 15rem;
   position: absolute;
   left: -15rem;
   top: 2rem;
-  transition: 0.4s;
+  transition: 0.6s;
   background-color: #f3f3f3;
   box-shadow: rgba(0, 0, 0, 0.14) 3px 3px 0 3px;
+}
+.header__nav a {
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 8rem;
+  display: inline-block;
 }
 .header__logo {
   margin: 0 auto;
@@ -114,33 +123,49 @@ table {
   content: "glider";
   color: transparent;
   transition: 0.4s;
+  display: inline;
 }
 .menu-item-category-12:hover:after {
   content: "glider";
   color: red;
   transition: 0.4s;
+  display: inline;
 }
 
 .menu-item-category-6:after {
   content: "plane";
   color: transparent;
   transition: 0.4s;
+  display: inline;
 }
 .menu-item-category-6:hover:after {
   content: "plane";
   color: red;
   transition: 0.4s;
+  display: inline;
 }
 
 .menu-item-category-10:after {
   content: "boat";
   color: transparent;
   transition: 0.4s;
+  display: inline;
 }
 .menu-item-category-10:hover:after {
   content: "boat";
   color: red;
   transition: 0.4s;
+  display: inline;
+}
+
+.article-h1 {
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+h3 {
+  font-weight: 700;
+  margin-bottom: .5rem;
 }
 
 a {
@@ -148,6 +173,17 @@ a {
   text-decoration: none;
 }
 a:hover {
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: .5rem;
+}
+p a {
+  color: inherit;
+  text-decoration: underline !important;
+}
+p a:hover {
   font-weight: 700;
 }
 
@@ -159,6 +195,7 @@ a:hover {
 
 .main {
   width: 100%;
+  min-height: 90vh;
 }
 .main__inner {
   padding: 1rem;
@@ -167,6 +204,13 @@ a:hover {
 @media (min-width: 36.25em) {
   .main__inner {
     padding: 5rem;
+  }
+}
+@media (min-width: 46.25em) {
+  .main__inner {
+    padding: 10rem;
+    padding-top: 5rem;
+    margin: auto;
   }
 }
 @media (min-width: 61.25em) {
@@ -192,8 +236,9 @@ video {
   height: auto;
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
-  background: url("") no-repeat;
   background-size: cover;
+  filter: grayscale(100%);
+  opacity: 0.6;
   transition: 1s opacity;
 }
 
@@ -207,9 +252,39 @@ video {
   height: auto;
   z-index: -10;
   transform: translateX(-50%) translateY(-50%);
-  background-color: rgba(109, 106, 79, 0.7);
+  background-color: rgba(183, 151, 41, 0.43);
+  mix-blend-mode: multiply;
   background-size: cover;
+  opacity: .3;
   transition: 1s opacity;
+}
+
+#footer {
+  text-align: center;
+  color: #9c998a;
+}
+
+.comment-box {
+  padding: 1rem;
+}
+
+.comments {
+  display: none;
+}
+
+textarea {
+  border: none;
+  margin-bottom: .5rem;
+}
+
+button {
+  border: none;
+  padding: .3rem .8rem;
+  background-color: #c7c5b2;
+}
+
+.blog-author {
+  color: #9c998a;
 }
 
 

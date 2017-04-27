@@ -20,13 +20,23 @@
 	}
 
 	&__nav {
-		width: auto;
+		width: 15rem;
 		position: absolute;
 		left: -15rem; 
     top: 2rem;
-    transition:0.4s;
+    transition:0.6s;
     background-color: $bg-primary;
     box-shadow: rgba(0, 0, 0, 0.14) 3px 3px 0 3px;
+
+	    a {
+		    text-decoration: none;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    display: block;
+		    width: 8rem;
+		    display: inline-block;
+			}
 	}
 
 	&__logo {
@@ -35,6 +45,7 @@
     width: 7rem;
     font-weight: 700;
 	}
+
 
 	@include mq($from: desktop) {
 
@@ -77,6 +88,7 @@
 		content:"glider";
 		color: transparent;
 			transition: 0.4s;
+			display: inline;
 	}
 
 	&:hover {
@@ -84,6 +96,7 @@
 			content: "glider";
 			color: red;
 			transition: 0.4s;
+			display: inline;
 		}
 	}
 }
@@ -94,6 +107,7 @@
 		content:"plane";
 		color: transparent;
 			transition: 0.4s;
+			display: inline;
 	}
 
 	&:hover {
@@ -101,6 +115,7 @@
 			content: "plane";
 			color: red;
 			transition: 0.4s;
+			display: inline;
 		}
 	}
 }
@@ -111,6 +126,7 @@
 		content:"boat";
 		color: transparent;
 			transition: 0.4s;
+			display: inline;
 	}
 
 	&:hover {
@@ -118,6 +134,7 @@
 			content: "boat";
 			color: red;
 			transition: 0.4s;
+			display: inline;
 		}
 	}
 }

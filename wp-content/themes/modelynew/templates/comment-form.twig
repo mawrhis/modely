@@ -20,8 +20,8 @@
         {% endif %}
 
         <div>
-            <label for="comment"> comment </label>
-            <textarea placeholder="comment text" name="comment" cols="60" rows="3" id="comment"></textarea>
+            <label for="comment"></label>
+            <textarea placeholder="" name="comment" cols="60" rows="3" id="comment"></textarea>
         </div>
 
         <input name="comment_post_ID" value="{{ post.id }}" id="comment_post_ID" type="hidden">
@@ -30,7 +30,6 @@
         <div>
             <button type="submit" name="Submit" class="btn"> send </button>
             <button type="reset"> cancel </button>
-            <p> Your comment will be revised by the site if needed. </p>
         </div>
     </form>
 </div>
