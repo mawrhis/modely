@@ -40,8 +40,7 @@ class StarterSite extends TimberSite {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-		$context['menu'] = new TimberMenu(3);
-		$context['menu2'] = new TimberMenu(6);
+		$context['menu'] = new TimberMenu(6);
 		$context['site'] = $this;
 		return $context;
 	}
@@ -108,3 +107,9 @@ register_taxonomy_for_object_type('category', 'page');
 add_action( 'init', 'myplugin_settings' );
 
 
+add_filter('timber_context', 'add_to_context');
+function add_to_context($data){
+	/* Now, in similar fashion, you add a Timber menu and send it along to the context. */
+	$data['menu2'] = new TimberMenu(3); // This is where you can also send a WordPress menu slug or ID
+	return $data;
+}
