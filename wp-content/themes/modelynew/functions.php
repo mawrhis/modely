@@ -40,7 +40,8 @@ class StarterSite extends TimberSite {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-		$context['menu'] = new TimberMenu();
+		$context['menu'] = new TimberMenu(3);
+		$context['menu2'] = new TimberMenu(6);
 		$context['site'] = $this;
 		return $context;
 	}
@@ -71,11 +72,39 @@ new StarterSite();
  * @param object $item
  * @return array $classes
  */
-function be_category_id_on_menu( $classes, $item ) {
-  if( $item->object !== 'post' )
-		return $classes;
+// function be_category_id_on_menu( $classes, $item ) {
+//   if( $item->object !== 'page' )
+	
+// 	$itemid[] = $item->object_id;
+// 	$categoryid[] = get_the_category( $item->object_id );	
+// 	$classes[] = 'menu-item-category666-' . $categoryid;
+// 	$classes[] = 'menu-item-id-' . $item->object_id;
+// 	$classes[] = 'menu-item-i122d-' . $itemid;
+// 	return $classes;
+// }
+// add_filter( 'nav_menu_css_class', 'be_category_id_on_menu', 10, 2 );
+
+
+// function be_category_id_on_menu( $classes, $item ) {
+//   if( $item->object !== 'category' )
+// 		return $classes;
 		
-	$classes[] = 'menu-item-category-' . $item->object_id;
-	return $classes;
+// 	$classes[] = 'menu-item-category-' . $item->object_id;
+// 	return $classes;
+// }
+// add_filter( 'nav_menu_css_class', 'be_category_id_on_menu', 10, 2 );
+
+
+
+
+
+function myplugin_settings() {  
+// Add tag metabox to page
+register_taxonomy_for_object_type('post_tag', 'page'); 
+// Add category metabox to page
+register_taxonomy_for_object_type('category', 'page');  
 }
-add_filter( 'nav_menu_css_class', 'be_category_id_on_menu', 10, 2 );
+ // Add to the admin_init hook of your theme functions.php file 
+add_action( 'init', 'myplugin_settings' );
+
+

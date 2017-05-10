@@ -8,7 +8,7 @@
 
 	<body class="{{body_class}} body" data-template="base.twig">
 		<header class="header" >
-			<div class="header__toggle"></div>
+			<div class="header__toggle">menu</div>
 			{% block header %}
 				<div class="wrapper">
 					<h1 class="hdr-logo header__logo" role="banner">
@@ -16,6 +16,7 @@
 					</h1>
 					<nav id="nav-main" class="nav-main header__nav" role="navigation">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
+						{% include "menu2.twig" with {'menu2': menu2.get_items} %}
 						
 					</nav><!-- #nav -->
 				</div>

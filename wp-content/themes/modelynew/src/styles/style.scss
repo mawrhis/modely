@@ -46,6 +46,17 @@
 	}
 }
 
+img {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+	padding: .5rem;
+
+	@include mq($from: mobile-landscape) {
+		padding: 1rem;
+	}
+}
+
 video { 
     position: fixed;
     top: 50%;
