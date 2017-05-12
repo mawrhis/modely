@@ -83,7 +83,7 @@ video {
     height: auto;
     z-index: -10;
     transform: translateX(-50%) translateY(-50%);
-    background-color: rgba(183, 151, 41, 0.43);
+    background-color: $bg-primary;
     mix-blend-mode: multiply;
 	  background-size: cover;
     opacity: .3;

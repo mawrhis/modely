@@ -7,6 +7,10 @@
 				<!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
 				<source src="{{site.theme.link}}/video.mp4xx" type="video/mp4">
 			</video>
+
+			{% for post in posts %}
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			{% endfor %}
 	<h2></h2>
 	<p></p>
 {% endblock %}

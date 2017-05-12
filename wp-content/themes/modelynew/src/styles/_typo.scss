@@ -3,6 +3,12 @@
 	padding-bottom: 1rem;
 }
 
+.h2 {
+	&--category{
+		margin: .5rem;
+	}
+}
+
 h3 {
 	font-weight: 700;
 	margin-bottom: .5rem;
