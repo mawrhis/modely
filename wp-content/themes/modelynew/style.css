@@ -201,6 +201,15 @@ p a:hover {
   font-weight: 700;
 }
 
+.component-table table {
+  width: 90%;
+  border: solid black 1px;
+  margin: 1rem auto;
+}
+.component-table tr, .component-table td, .component-table th {
+  border: solid black 1px;
+}
+
 .body {
   background-color: #f3f3f3;
   font-family: "Inconsolata", monospace;
