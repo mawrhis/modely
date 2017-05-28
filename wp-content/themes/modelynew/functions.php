@@ -61,49 +61,31 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
-/**
- * Category ID on Menu 
- * 
- * @author Bill Erickson
- * @link http://www.billerickson.net/code/category-id-on-menu-items
- *
- * @param array $classes
- * @param object $item
- * @return array $classes
- */
-// function be_category_id_on_menu( $classes, $item ) {
-//   if( $item->object !== 'page' )
-	
-// 	$itemid[] = $item->object_id;
-// 	$categoryid[] = get_the_category( $item->object_id );	
-// 	$classes[] = 'menu-item-category666-' . $categoryid;
-// 	$classes[] = 'menu-item-id-' . $item->object_id;
-// 	$classes[] = 'menu-item-i122d-' . $itemid;
-// 	return $classes;
-// }
-// add_filter( 'nav_menu_css_class', 'be_category_id_on_menu', 10, 2 );
 
 
-// function be_category_id_on_menu( $classes, $item ) {
-//   if( $item->object !== 'category' )
-// 		return $classes;
-		
-// 	$classes[] = 'menu-item-category-' . $item->object_id;
-// 	return $classes;
-// }
-// add_filter( 'nav_menu_css_class', 'be_category_id_on_menu', 10, 2 );
-
-
-
-
-
-function myplugin_settings() {  
-// Add tag metabox to page
-register_taxonomy_for_object_type('post_tag', 'page'); 
-// Add category metabox to page
-register_taxonomy_for_object_type('category', 'page');  
+// meta boxes
+function modely_register_meta_boxes( $meta_boxes ) {
+    $prefix = 'rw_';
+    // 1st meta box
+    $meta_boxes[] = array(
+        'id'         => 'component-table',
+        'title'      => __( 'Komponenty', 'textdomain' ),
+        'post_types' => array( 'post' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+            array(
+                'name'  => __( 'Motor', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'fname',
+                'type'  => 'text',
+                'std'   => 'Anh Tran',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),
+        )
+    );
+    return $meta_boxes;
 }
- // Add to the admin_init hook of your theme functions.php file 
-add_action( 'init', 'myplugin_settings' );
 
-
+add_filter( 'rwmb_meta_boxes', 'modely_register_meta_boxes' );	

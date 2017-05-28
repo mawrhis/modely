@@ -405,3 +405,30 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since Twenty Fifteen 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
+
+// meta boxes
+function modely_register_meta_boxes( $meta_boxes ) {
+    $prefix = 'rw_';
+    // 1st meta box
+    $meta_boxes[] = array(
+        'id'         => 'component-table',
+        'title'      => __( 'Komponenty', 'textdomain' ),
+        'post_types' => array( 'post' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+            array(
+                'name'  => __( 'Motor', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'fname',
+                'type'  => 'text',
+                'std'   => 'Anh Tran',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),
+        )
+    );
+    return $meta_boxes;
+}
+
+add_filter( 'rwmb_meta_boxes', 'modely_register_meta_boxes' );	
