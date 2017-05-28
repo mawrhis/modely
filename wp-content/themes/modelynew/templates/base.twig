@@ -11,9 +11,9 @@
 			<div class="header__toggle">menu</div>
 			{% block header %}
 				<div class="wrapper">
-					<h1 class="hdr-logo header__logo" role="banner">
-						<a class="hdr-logo-link header__logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
+					<h4 class="hdr-logo header__logo" role="banner">
+						<a class="hdr-logo-link header__logo-link" href="{{site.url}}" rel="home">{{site.name}}</a> <img class="header__logo-image" src="{{ theme.link }}/dist/images/model.svg">
+					</h4>
 					<nav id="nav-main" class="nav-main header__nav" role="navigation">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 						

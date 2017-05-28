@@ -9,6 +9,7 @@
  * @since    Timber 0.1
  */
 
+$context['tags'] = Timber::get_terms('tag');
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
@@ -18,3 +19,4 @@ if ( post_password_required( $post->ID ) ) {
 } else {
 	Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context );
 }
+

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin-ext');
 @import "reset";
 @import "mq";
 @import "variables";
@@ -6,10 +7,21 @@
 
 
 //styles
+
+iframe {
+  width: 100%;
+  height: auto;
+}
+
+figure {
+  width: 100% !important;
+}
+
 .body { 
 	background-color: $bg-primary;
 	font-family: $primary;
 	font-size: $default;
+  overflow-x:hidden;
 }
 
 .main {	
@@ -39,7 +51,7 @@
 	}
 
 	@include mq($from: wide) {
-		width: 800px;
+		width: 600px;
 		margin: auto;
 	}
 
@@ -106,6 +118,7 @@ video {
 textarea {
 	border: none;
 	margin-bottom: .5rem;
+  width:100%;
 }
 
 button {
@@ -116,4 +129,11 @@ button {
 
 .blog-author {
 	color: $secondary-light;
+}
+
+.article-body {
+  ul {
+    list-style: disc;
+    padding-left: 2rem;
+  }
 }

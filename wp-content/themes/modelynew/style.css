@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin-ext");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -59,7 +60,7 @@ table {
 .header {
   height: 2rem;
   background-color: #f3f3f3;
-  font-family: "Inconsolata", monospace;
+  font-family: Cambria, serif;
   font-size: 16px;
   position: fixed;
   width: 100%;
@@ -97,8 +98,18 @@ table {
 .header__logo {
   margin: 0 auto;
   margin-top: .5rem;
-  width: 7rem;
+  width: 11rem;
   font-weight: 700;
+  font-family: Cambria, serif;
+  text-transform: uppercase;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header__logo-image {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  margin-left: .5rem;
 }
 @media (min-width: 61.25em) {
   .header__toggle {
@@ -168,18 +179,47 @@ table {
   display: inline;
 }
 
+html {
+  font-size: 16px;
+}
+
 .article-h1 {
   font-weight: 700;
-  padding-bottom: 1rem;
 }
 
 .h2--category {
   margin: .5rem;
 }
 
-h3 {
+.tease .h2--category {
+  font-family: Cambria, serif;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: "PT Sans", sans-serif;
+  margin: .5rem 0;
+}
+
+h1 {
   font-weight: 700;
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-weight: 400;
   margin-bottom: .5rem;
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.1rem;
 }
 
 a {
@@ -191,7 +231,9 @@ a:hover {
 }
 
 p {
-  margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.3rem;
+  font-size: 1rem;
 }
 p a {
   color: inherit;
@@ -201,10 +243,20 @@ p a:hover {
   font-weight: 700;
 }
 
+iframe {
+  width: 100%;
+  height: auto;
+}
+
+figure {
+  width: 100% !important;
+}
+
 .body {
   background-color: #f3f3f3;
-  font-family: "Inconsolata", monospace;
+  font-family: Cambria, serif;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 .main {
@@ -235,7 +287,7 @@ p a:hover {
 }
 @media (min-width: 81.25em) {
   .main__inner {
-    width: 800px;
+    width: 600px;
     margin: auto;
   }
 }
@@ -301,6 +353,7 @@ video {
 textarea {
   border: none;
   margin-bottom: .5rem;
+  width: 100%;
 }
 
 button {
@@ -311,6 +364,11 @@ button {
 
 .blog-author {
   color: #9c998a;
+}
+
+.article-body ul {
+  list-style: disc;
+  padding-left: 2rem;
 }
 
 
