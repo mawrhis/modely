@@ -62,36 +62,30 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/images'));
 });
 
+//browsersync
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy   : "http://localhost/modely"
+    });
+        // Watch .scss files
+    gulp.watch('src/styles/**/*.scss', ['styles']);
+
+    // Watch .js files
+    gulp.watch('src/scripts/**/*.js', ['scripts']);
+
+    // Watch image files
+    gulp.watch('src/images/**/*', ['images']);
+
+    gulp.watch(['./*.php']).on("change", browserSync.reload);
+});
+
 
 // Clean
 gulp.task('clean', function() {
   return del(['dist/styles', 'dist/scripts', 'dist/images']);
 });
 
-// Watch
-gulp.task('watch', function() {
 
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    }),
-
-  // Watch .scss files
-  gulp.watch('src/styles/**/*.scss', ['styles']);
-
-  // Watch .js files
-  gulp.watch('src/scripts/**/*.js', ['scripts']);
-
-  // Watch image files
-  gulp.watch('src/images/**/*', ['images']);
-
-
-    gulp.watch(['dist/**']).on("change", reload);
-    gulp.watch(['src/**']).on("change", reload);
-    gulp.watch(['*.html']).on("change", reload);
-
-});
 
 // Default task
 gulp.task('default', ['clean'], function() {
@@ -100,5 +94,5 @@ gulp.task('default', ['clean'], function() {
 
 // Serve task
 gulp.task('serve', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images', 'watch' );
+  gulp.start('styles', 'scripts', 'images', 'browser-sync' );
 });

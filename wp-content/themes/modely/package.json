@@ -20,10 +20,16 @@
     "gulp-imagemin": "^3.2.0",
     "gulp-jshint": "^2.0.4",
     "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
+    "gulp-sourcemaps": "1.11.1",
     "gulp-uglify": "^2.1.2",
     "jshint": "^2.9.4"
+  },
+  "dependencies": {
+    "gulp-dependency-install": "0.0.8",
+    "sass-mq": "^3.3.2"
   }
 }

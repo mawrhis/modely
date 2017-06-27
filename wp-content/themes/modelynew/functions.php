@@ -77,9 +77,63 @@ function modely_register_meta_boxes( $meta_boxes ) {
             array(
                 'name'  => __( 'Motor', 'textdomain' ),
                 'desc'  => 'Format: First Last',
-                'id'    => $prefix . 'fname',
+                'id'    => $prefix . 'motor',
                 'type'  => 'text',
-                'std'   => 'Anh Tran',
+                'std'   => '',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),
+            array(
+                'name'  => __( 'ESC', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'esc',
+                'type'  => 'text',
+                'std'   => '',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),           
+             array(
+                'name'  => __( 'serva', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'serva',
+                'type'  => 'text',
+                'std'   => '',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),
+            array(
+                'name'  => __( 'vrtule', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'vrtule',
+                'type'  => 'text',
+                'std'   => '',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),
+           array(
+                'name'  => __( 'přijímač', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'prijimac',
+                'type'  => 'text',
+                'std'   => '',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),
+            array(
+                'name'  => __( 'váha', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'vaha',
+                'type'  => 'text',
+                'std'   => '',
+                'class' => 'custom-class',
+                'clone' => true,
+            ),
+            array(
+                'name'  => __( 'doplňky', 'textdomain' ),
+                'desc'  => 'Format: First Last',
+                'id'    => $prefix . 'vaha',
+                'type'  => 'text',
+                'std'   => '',
                 'class' => 'custom-class',
                 'clone' => true,
             ),
@@ -89,3 +143,12 @@ function modely_register_meta_boxes( $meta_boxes ) {
 }
 
 add_filter( 'rwmb_meta_boxes', 'modely_register_meta_boxes' );	
+
+add_filter('get_twig', 'add_to_twig');
+
+function add_to_twig($twig) {
+  /* this is where you can add your own fuctions to twig */
+  $twig->addExtension(new Twig_Extension_StringLoader());
+  $twig->addFilter(new Twig_SimpleFilter( 'rwmb_meta_boxes', 'modely_register_meta_boxes' ));
+  return $twig;
+}

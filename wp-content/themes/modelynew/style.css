@@ -243,6 +243,15 @@ p a:hover {
   font-weight: 700;
 }
 
+.component-table table {
+  width: 90%;
+  border: solid black 1px;
+  margin: 1rem auto;
+}
+.component-table tr, .component-table td, .component-table th {
+  border: solid black 1px;
+}
+
 iframe {
   width: 100%;
   height: auto;
