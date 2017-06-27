@@ -1,4 +1,13 @@
+//fontface
+
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin-ext');
+
+//vendor
+
+@import "vendor/bootstrap";
+
+//components
+
 @import "reset";
 @import "mq";
 @import "variables";
