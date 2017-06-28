@@ -2,15 +2,20 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<div class="main__inner">
+			<section>
 
-			<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
+				<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
 
-			<?php get_template_part('loop'); ?>
+				<?php get_template_part('loop'); ?>
 
-			<?php get_template_part('pagination'); ?>
+				<?php get_template_part('pagination'); ?>
 
-		</section>
+			</section>
+
+		</div>
+
+
 		<!-- /section -->
 	</main>
 
