@@ -37,8 +37,7 @@ gulp.task('styles', function() {
         includeContent: false,
         sourceRoot: 'source'
     }))
-    .pipe(gulp.dest('./'))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest('./'));
 });
 
 
@@ -65,17 +64,20 @@ gulp.task('images', function() {
 //browsersync
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy   : "http://localhost/modely"
+        proxy   : "http://localhost/modely",
+        logLevel: "debug"
     });
-        // Watch .scss files
-    gulp.watch('src/styles/**/*.scss', ['styles']);
+    // Watch .scss files
+    gulp.watch(['src/styles/**/*.scss', 'src/styles/*.scss'], ['styles'])
+    gulp.watch(['./*.css']).on("change", browserSync.reload);
 
     // Watch .js files
     gulp.watch('src/scripts/**/*.js', ['scripts']);
 
     // Watch image files
     gulp.watch('src/images/**/*', ['images']);
-
+    
+    // Watch image files
     gulp.watch(['./*.php']).on("change", browserSync.reload);
 });
 

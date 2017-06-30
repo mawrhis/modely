@@ -4,7 +4,7 @@
 }
 
 .header {
-	height: 2rem;
+	height: 5rem;
 	background-color: $bg-primary;
 	font-family: $primary;
 		font-size: $default;
@@ -46,7 +46,7 @@
 
 	&__logo {
     margin: 0 auto;
-    margin-top: .5rem;
+    margin-top: 1.4rem;
     width: 11rem;
     font-weight: 700;
 		font-family: $primary;
@@ -54,10 +54,15 @@
 		display: flex;
 	}
 
+	&__logo-link {
+		padding-top: .6rem;
+		margin-right: .8rem;
+	}
+
 	&__logo-image {
 
-    width: 1rem;
-    height: 1rem;
+    width: 2rem;
+    height: 2rem;
     padding: 0;
     margin-left: .5rem;
 	}
