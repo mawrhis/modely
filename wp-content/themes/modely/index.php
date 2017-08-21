@@ -5,9 +5,11 @@
 		<div class="main__inner">
 			<section>
 
-				<h1><?php _e( 'Latest Posts', 'html5blank' ); ?></h1>
-
-				<?php get_template_part('loop'); ?>
+        <div class="container">
+          <div class="row">
+    				<?php get_template_part('loop'); ?>
+          </div>
+        </div>
 
 				<?php get_template_part('pagination'); ?>
 

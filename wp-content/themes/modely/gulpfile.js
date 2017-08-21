@@ -27,12 +27,16 @@ gulp.task('styles', function() {
     .on('error', sass.logError)
     .pipe(autoprefixer('last 2 version'))
     .pipe(gulp.dest('./'))
+
+    //minify 
     .pipe(rename({ suffix: '.min' }))
     .pipe(cssnano())
     .pipe(gulp.dest('./'))
-     // for inline sourcemaps 
+
+
+    // for inline sourcemaps 
     .pipe(sourcemaps.write())
-        // for file sourcemaps 
+    // for file sourcemaps 
     .pipe(sourcemaps.write('./', {
         includeContent: false,
         sourceRoot: 'source'
@@ -78,7 +82,7 @@ gulp.task('browser-sync', function() {
     gulp.watch('src/images/**/*', ['images']);
     
     // Watch image files
-    gulp.watch(['./*.php']).on("change", browserSync.reload);
+    gulp.watch(['./**/*.php']).on("change", browserSync.reload);
 });
 
 
